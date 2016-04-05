@@ -1,0 +1,23 @@
+@charset "utf-8";
+.login{
+    font: bold 12px "Arial Narrow", Helvetica, Arial, sans-serif;
+    text-align: left;
+	position: absolute;
+	text-align:center;
+	top: 120.047px;
+	width: 275px;
+	float:right;
+	}
+.user{
+	align-content: center;
+	margin-bottom: 6px;
+	}
+.senha{
+	margin-bottom: 6px;
+}
+	
+.logo{
+	float:left;
+	width:200px;
+	height:200px;
+	}
