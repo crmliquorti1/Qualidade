@@ -67,11 +67,11 @@
                                         <input type="text" id="ramal" name="ramal" class="form-control" size="1">
                                         </td>
                                         </tr>
-                                        
+
                                         <tr>
                                         <td class="tab-lis">
                                         <label class="lis"> Dia: </label>
-                                        
+
                                         <input type="text" readonly="true" name="dia" class="form-control" value="<%=SessionUtils.getData()%>">
                                         </td>
 
@@ -226,7 +226,7 @@
                                         </select>
                                         </td>
 
-                                        
+
 
                                         </tr>
 
@@ -247,7 +247,7 @@
                                         <input type="text" id="cpfePaciente" name="cpfPaciente" class="form-control">
                                         </td>
 
-                                        
+
 
                                         </tr>
 
@@ -395,6 +395,13 @@
 
 
                             <!-- INICIO TAB 4-->
+                            <script>
+                                function myFunction() {
+                                    var x = document.getElementById("mySelect").value;
+                                    document.getElementById("demo").innerHTML = "You selected: " + x;
+                                }
+                            </script>
+                            
                             <div class="tab-pane" id="four">
                                 <br>
                                 <div class="linha"> <h4> Procedimento </h4> </div> 
@@ -402,159 +409,21 @@
 
 
                                 <div class="linha">
-                                    <div class="table-responsive">
-                                    <center>
-                                        <table class="table-exames table-striped" width="50%" border="1">
 
-                                            <tr style="background-color: #6C7B8B;">                                            
-                                            <th style="color:#fff;"> <input type="checkbox" class="form-control" onClick="toggle(this)"/> </th>
-                                            <th style="color:#fff;"> Mnemônico </th>
-                                            <th style="color:#fff;"> Sigla </th>
-                                            <th style="color:#fff;"> Descrição </th>
-                                            </tr>
+                                    <select id = "mySelect" onchange = "myFunction()" class="form-control">
+                                        <option> Selecione
+                                        <option value = "internado" > Internado
+                                        <option value = "pronto socorro" > Pronto Socorro
+                                    </select>
+                                    
+                                    <p id="demo"></p>
+                                    
+                                    
+                                    <div></div>
 
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar1"/></td>
-                                            <td class="tab-lis"> CFLCR </td>
-                                            <td class="tab-lis"> CFLCR </td>
-                                            <td class="tab-lis"> EXAME FÍSICO </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar2"/></td>
-                                            <td class="tab-lis"> 40601129 </td>
-                                            <td class="tab-lis"> CITO </td>
-                                            <td class="tab-lis"> CITOLÓGICO DIFERENCIAL LCR </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar3"/></td>
-                                            <td class="tab-lis"> 40301559 </td>
-                                            <td class="tab-lis"> CLLCR </td>
-                                            <td class="tab-lis"> CLORETO - LIQUOR</td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar4"/></td>
-                                            <td class="tab-lis"> COLE </td>
-                                            <td class="tab-lis"> COLE </td>
-                                            <td class="tab-lis"> COLETA </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar5"/></td>
-                                            <td class="tab-lis"> CON </td>
-                                            <td class="tab-lis"> CON </td>
-                                            <td class="tab-lis"> CONCLUSÃO </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar6"/></td>
-                                            <td class="tab-lis"> EMIC</td>
-                                            <td class="tab-lis"> EMIC</td>
-                                            <td class="tab-lis"> EXAME MICROSCÓPICO </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar7"/></td>
-                                            <td class="tab-lis"> 40302040 </td>
-                                            <td class="tab-lis"> GLIL </td>
-                                            <td class="tab-lis"> GLICOSE LIQUOR</td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar8"/></td>
-                                            <td class="tab-lis"> HIPOT</td>
-                                            <td class="tab-lis"> HIPOT </td>
-                                            <td class="tab-lis"> HIPÓTESE DIAGNÓSTICA </td>
-                                            </tr>
-
-                                            
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar9"/></td>
-                                            <td class="tab-lis"> 40302377</td>
-                                            <td class="tab-lis"> PROTLCR </td>
-                                            <td class="tab-lis"> PROTEÍNA LÍQUOR </td>
-                                            </tr>
-
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar10"/></td>
-                                            <td class="tab-lis"> QCL</td>
-                                            <td class="tab-lis"> QCL </td>
-                                            <td class="tab-lis"> QUADRO CLÍNICO </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar11"/></td>
-                                            <td class="tab-lis"> 40309126</td>
-                                            <td class="tab-lis"> LCRPS </td>
-                                            <td class="tab-lis"> Rotina de LCR (Caracteres Gerais, Contagem Global e especifica , Dosagem de Cloretos , Glicose , Proteinas , Reações de VDRL ) </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar12"/></td>
-                                            <td class="tab-lis"> 40309150</td>
-                                            <td class="tab-lis"> PUNC</td>
-                                            <td class="tab-lis"> PUNÇÃO LIQUORICA </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar13"/></td>
-                                            <td class="tab-lis"> 40310051</td>
-                                            <td class="tab-lis"> BAAR </td>
-                                            <td class="tab-lis"> B.A.A.R (Ziehl ou fluorescência, pesquisa direta e após homogeneização) - pesquisa </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar14"/></td>
-                                            <td class="tab-lis"> 40310060 </td>
-                                            <td class="tab-lis"> BACT</td>
-                                            <td class="tab-lis"> BACTERIOSCOPICO </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar15"/></td>
-                                            <td class="tab-lis"> 40306658 </td>
-                                            <td class="tab-lis"> CISTI </td>
-                                            <td class="tab-lis"> CISTICERCOSE, SOROLOGIA </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar16"/></td>
-                                            <td class="tab-lis"> 40309045</td>
-                                            <td class="tab-lis"> CNEO </td>
-                                            <td class="tab-lis"> PESQUISA DE CELULAS NEOPLASICAS </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar17"/></td>
-                                            <td class="tab-lis"> 40310400 </td>
-                                            <td class="tab-lis"> CULTU</td>
-                                            <td class="tab-lis"> Cultura Automatizada </td>
-                                            </tr>
-
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar18"/></td>
-                                            <td class="tab-lis"> 40309070 </td>
-                                            <td class="tab-lis"> LXHI </td>
-                                            <td class="tab-lis"> LATEX-HAEMOPHILUS INFLUENZAE TIPO B </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar19"/></td>
-                                            <td class="tab-lis"> 40309070 </td>
-                                            <td class="tab-lis"> LXNM </td>
-                                            <td class="tab-lis"> LATEX-NEISSERIA MENINGITIDIS ACYW135 </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar20"/></td>
-                                            <td class="tab-lis"> 40309070 </td>
-                                            <td class="tab-lis"> LXNMB </td>
-                                            <td class="tab-lis"> LATEX-NEISSERIA MENINGITIDIS TIPO B </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar21"/></td>
-                                            <td class="tab-lis"> 40309070 </td>
-                                            <td class="tab-lis"> LXSP </td>
-                                            <td class="tab-lis"> LATEX-STREPTOCOCCUS PNEUMONIAE </td>
-                                            </tr>
-
-                                            <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar22"/></td>
-                                            <td class="tab-lis"> 40309070 </td>
-                                            <td class="tab-lis"> LXST </td>
-                                            <td class="tab-lis"> LATEX-STREPTOCOCCUS TIPO B </td>
-                                            </tr>
-
-                                        </table>
-                                        </center>
-                                    </div>
                                 </div>
 
-                                
+
 
 
                                 <br><br>
