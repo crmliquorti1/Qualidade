@@ -36,7 +36,7 @@ public class SessionUtils {
         BufferedWriter bw = null;
 
         try {
-            bw = new BufferedWriter(new FileWriter("C:\\Users\\CR2 SISTEMAS\\Dropbox\\logFuncionario.txt", true));
+            bw = new BufferedWriter(new FileWriter("C:\\Users\\ti1\\Desktop\\logs\\logFuncionario.txt", true));
             bw.write(log);
             bw.newLine();
             bw.flush();

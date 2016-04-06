@@ -5,12 +5,9 @@
  */
 package gerenciador.servlets;
 
-import gerenciador.entidades.Cargo;
 import gerenciador.entidades.Pessoa;
-import gerenciador.persistencia.ConexaoInterface;
 import gerenciador.persistencia.DaoException;
 import gerenciador.persistencia.PessoaDaoFactory;
-import gerenciador.persistencia.PessoaDaoImpl;
 import gerenciador.persistencia.PessoaDaoInterface;
 import gerenciador.servlets.utils.SessionUtils;
 import java.io.IOException;
@@ -23,17 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
-import javax.swing.JOptionPane;
 
 @WebServlet("/uploadServlet2")
 @MultipartConfig(maxFileSize = 16177215)
@@ -155,16 +143,20 @@ public class EditarFuncionarioServlet extends HttpServlet {
         doaOrgao = request.getParameter("doaOrgao");
 
         Part filePart = request.getPart("foto");
-        is = filePart.getInputStream();
 
-        HttpSession session = request.getSession();
+        if (filePart != null) {
 
+            is = filePart.getInputStream();
+
+        }
+
+//        
 //        List listaTeste = (List) request.getAttribute("lista_funcionarios");
         log = "Funcionario " + nome + " Editado por: " + SessionUtils.getUsuarioLogado(request.getSession()).getNome() + " em " + SessionUtils.getDataHora();
 
         Pessoa pessoa = new Pessoa(acesso, nome, email, envioEmails, matricula, admissao, qualificacao, cargoPrincipal, cargoSecundario, setor, turno, login, senha, dataExpiracao, situacao, enviaAviso, rg, cpf, dataNascimento, ctps, pis, planoSaude, pais, cep, endereco, numero, bairro, complemento, estado, cidade, telResidencial, telCel, celEmerg, is, notasMedicas, alergiasReacoes, medicamentos, contatoEmerg, sangue, peso, doaOrgao, problemasSaude, log);
 
-        PessoaDaoInterface dao = PessoaDaoFactory.getPessoaDAO(session);
+        PessoaDaoInterface dao = PessoaDaoFactory.getPessoaDAO(request.getSession());
 
         if (filePart.getSize()
                 != 0) {
