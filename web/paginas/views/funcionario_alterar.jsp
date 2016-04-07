@@ -27,14 +27,15 @@
 <section class="p1">
 
     <form name="form1" action="EditarFuncionarioServlet" method="POST" enctype="multipart/form-data">
-        
-        <div class="img-ficha2">
-            <center>
-                <input type="hidden" name="MAX_FILE_SIZE" value="99999999"/>
-                <img class="img-al" src="data:image/png;base64,${foto}" id="fotoColaborador" class="img-polaroid" width="160px" height="180px" align="right" alt="Alterar Imagem">
-                <input type="file" name="foto" onchange="openFile(event)" id="foto" accept="image/*" class="form-control" align="right">
-            </center>
+
+        <div>
+
+            <input type="hidden" name="MAX_FILE_SIZE" value="99999999"/>
+            <img class="img-al" src="data:image/png;base64,${foto}" id="fotoColaborador" class="img-polaroid" width="160px" height="180px" align="right" alt="Alterar Imagem">
+            <input type="file" name="foto" onchange="openFile(event)" id="foto" accept="image/*" class="form-control" align="right">
+
         </div>
+            <br><br>
 
         <label> Nível de Acesso: </label> <input  readonly="true" name="acesso" type="text" class="form-control" value="${funcionario.acesso}">  <br><br>
         <label> Nome: </label> <input type="text" name="nome" class="form-control" value="${funcionario.nome}">  <br><br>
@@ -85,6 +86,8 @@
                 <option name="situacao" selected="selected">Ativo</option>
                 <option>Inativo</option>
             </select>
+
+
 
             <br><br>
             <br>
@@ -432,6 +435,7 @@
             <label> Grupo Sanguíneo </label> <input type="text" name="sangue" id="sangue" class="form-control" value="${funcionario.sangue}">  <br><br>
             <label> Peso </label> <input type="text" name="peso" id="peso" class="form-control" value="${funcionario.peso}">  <br><br>
             <label> É Doador (a) de Órgãos </label> <input type="text" name="doaOrgao" class="form-control" value="${funcionario.doaOrgao}">  <br><br>
+
         </div>
 
         <br><br>

@@ -37,7 +37,7 @@
             </ul>
         </li>
 
-        <li class='has-sub'><a href='#'>DOCUMENTOS</a>
+       <li class='has-sub'><a href='#'>DOCUMENTOS</a>
 
 
             <ul>
@@ -52,11 +52,34 @@
                 <li>
                     <form action="/Qualidade/FrontControllerServlet" method="POST">
                         <input type="hidden" name="controle" value="ListarDocs">
+                        <input type="hidden" name="diretorio" value="Doc Comercial">
+                        <input type="submit" value="Comercial" class="botaoMenu">
+                    </form>
+                </li>
+
+                <li>
+                    <form action="/Qualidade/FrontControllerServlet" method="POST"> 
+                        <input type="hidden" name="controle" value="ListarDocs">
                         <input type="hidden" name="diretorio" value="Doc Recepcao">
                         <input type="submit" value="Recepção" class="botaoMenu">
                     </form>
                 </li>
 
+                <li>
+                    <form action="/Qualidade/FrontControllerServlet" method="POST">
+                        <input type="hidden" name="controle" value="ListarDocs">
+                        <input type="hidden" name="diretorio" value="Doc Tecnica">
+                        <input type="submit" value="Técnica" class="botaoMenu">
+                    </form>
+                </li>
+
+                <li>
+                    <form action="/Qualidade/FrontControllerServlet" method="POST">
+                        <input type="hidden" name="controle" value="ListarDocs">
+                        <input type="hidden" name="diretorio" value="Doc. Clinico">
+                        <input type="submit" value="Clínico" class="botaoMenu">
+                    </form>
+                </li>
 
                 <li>
                     <form action="/Qualidade/FrontControllerServlet" method="POST">
@@ -73,11 +96,35 @@
                         <input type="submit" value="Recursos Humanos" class="botaoMenu">
                     </form>
                 </li>
+
+                <li>
+                    <form action="/Qualidade/FrontControllerServlet" method="POST">
+                        <input type="hidden" name="controle" value="ListarDocs">
+                        <input type="hidden" name="diretorio" value="Logistica">
+                        <input type="submit" value="Logística" class="botaoMenu">
+                    </form>
+                </li>
+
+                <li>
+                    <form action="/Qualidade/FrontControllerServlet" method="POST">
+                        <input type="hidden" name="controle" value="ListarDocs">
+                        <input type="hidden" name="diretorio" value="PoP - Documentos">
+                        <input type="submit" value="PoP - Documentos" class="botaoMenu">
+                    </form>
+                </li>
+
+                <li>
+                    <form action="/Qualidade/FrontControllerServlet" method="POST">
+                        <input type="hidden" name="controle" value="ListarDocs">
+                        <input type="hidden" name="diretorio" value="RNC">
+                        <input type="submit" value="RNC" class="botaoMenu">
+                    </form>
+                </li>   
             </ul>
 
 
         </li>
-        <li class='has-sub'><a href='#'>ATENDIMENTO</a>
+<!--        <li class='has-sub'><a href='#'>ATENDIMENTO</a>
             <ul>
                 <li>
                     <form action="/Qualidade/FrontControllerServlet" method="POST">
@@ -86,6 +133,6 @@
                     </form>
                 </li>
             </ul>
-        </li>
+        </li>-->
     </ul>
 </div>

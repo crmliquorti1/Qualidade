@@ -37,7 +37,7 @@ public class FiltroAutenticacao implements Filter {
 
         HttpSession session = req.getSession(false);
 
-        if (session == null && !(uri.endsWith("html") || uri.endsWith("LoginServlet") || uri.endsWith("FrontControllerServlet"))) {
+        if (session == null && !(uri.endsWith("html") || uri.endsWith("LoginServlet") || uri.endsWith("FrontControllerServlet") || uri.endsWith(".jsp"))) {
             this.context.log("Unauthorized access request");
             res.sendRedirect("/Qualidade/index.html");
         } else {

@@ -25,13 +25,21 @@
                         <input type="submit" value="Faturamento" class="botaoMenu">
                     </form>
                 </li>
+                
+                <li>
+                    <form action="/Qualidade/FrontControllerServlet" method="POST">
+                        <input type="hidden" name="controle" value="ListarDocs">
+                        <input type="hidden" name="diretorio" value="RNC">
+                        <input type="submit" value="RNC" class="botaoMenu">
+                    </form>
+                </li>
 
 
             </ul>
 
 
         </li>
-        <li class='has-sub'><a href='#'>ATENDIMENTO</a>
+<!--        <li class='has-sub'><a href='#'>ATENDIMENTO</a>
             <ul>
                 <li>
                     <form action="/Qualidade/FrontControllerServlet" method="POST">
@@ -40,6 +48,6 @@
                     </form>
                 </li>
             </ul>
-        </li>
+        </li>-->
     </ul>
 </div>
