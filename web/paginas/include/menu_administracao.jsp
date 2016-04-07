@@ -124,7 +124,7 @@
 
 
         </li>
-<!--        <li class='has-sub'><a href='#'>ATENDIMENTO</a>
+        <li class='has-sub'><a href='#'>ATENDIMENTO</a>
             <ul>
                 <li>
                     <form action="/Qualidade/FrontControllerServlet" method="POST">
@@ -133,6 +133,6 @@
                     </form>
                 </li>
             </ul>
-        </li>-->
+        </li>
     </ul>
 </div>
