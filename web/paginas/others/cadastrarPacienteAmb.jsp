@@ -122,16 +122,7 @@
                                             <option value="Unimed Guarulhos (Unidade 2)">Unimed Guarulhos (Unidade 2) - (11) 2447-9000</option>
                                         </select>
                                         </td>
-
-                                        <td class="tab-lis">
-                                        <label class="lis2"> Local: </label> 
-                                        <input type="text" id="local" name="local" class="form-control" size="15"> 
-                                        </td> 
-
-                                        <td class="tab-lis">
-                                        <label class="lis4"> Quarto/Leito: </label> 
-                                        <input type="text" id="quarto/leito" name="quarto/leito" class="form-control" size="1"> 
-                                        </td>   
+   
                                         </tr>
 
 
@@ -335,6 +326,13 @@
                                         <label class="lis"> Senha:</label>
                                         <input type="text" id="senha" name="senha" class="form-control" size="17">
                                         </td>
+                                        
+                                        <tr>
+                                        <td class="tab-lis">
+                                        <label class="lis">CRM Médico Solicitante: </label>
+                                        <input type="text" id="crm" name="crm" class="form-control">
+                                        </td>
+
 
 
                                         <td class="tab-lis">
@@ -343,21 +341,7 @@
                                         </td>
                                         </tr>
 
-                                        <tr>
-                                        <td class="tab-lis">
-                                        <label class="lis">CRM: </label>
-                                        <input type="text" id="crm" name="crm" class="form-control">
-                                        </td>
-
-                                        <td class="tab-lis">
-                                        <label class="lis"> Hora de Entrada do Paciente:</label>
-                                        <input type="time" id="horaEntradaPaciente" name="horaEntradaPaciente" class="form-control">
-                                        </td>                                        
-
-                                        <td class="tab-lis">
-                                        <label class="lis">Internado Desde: </label>
-                                        <input type="date" id="internadoDesde" name="internadoDesde" class="form-control">
-                                        </td>                                        
+                                                                                                         
                                         </tr>
                                     </table>
                                 </div>
