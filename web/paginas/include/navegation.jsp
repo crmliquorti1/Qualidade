@@ -151,7 +151,7 @@
 
 
                     else if (mymonth == 3)
-                        month = " de April de "
+                        month = " de Abril de "
 
 
 
