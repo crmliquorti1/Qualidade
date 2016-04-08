@@ -1,7 +1,7 @@
 <%-- 
     Document   : cadastrarPessoa
     Created on : 11/01/2016, 16:02:45
-    Author     : Vinicius Nunes
+    Author     : Vinicius S Nunes
 --%>
 <jsp:include page = "../include/head.jsp" />
 
@@ -27,7 +27,7 @@
                     <ul class="nav nav-tabs nav-justified" id="myTabs">
                         <li class="active"><a id="tab-1" href="#one" data-toggle="tab">Dados do Hospital</a></li>
                         <li><a href="#two" id="tab-2" data-toggle="tab">Dados do Paciente</a></li>
-                        <li><a href="#three" id="tab-3" data-toggle="tab">Dados do ConvÍnio</a></li>
+                        <li><a href="#three" id="tab-3" data-toggle="tab">Dados do Conv√™nio</a></li>
                         <li><a href="#four" id="tab-4" data-toggle="tab">Procedimento</a></li>
                     </ul>
 
@@ -74,7 +74,7 @@
                                         </td>
 
                                         <td class="tab-lis">
-                                        <label class="lis2"> Hor·rio: </label>
+                                        <label class="lis2"> Hor√°rio: </label>
                                         <input type="time" id="horario" name="horario" class="form-control">
                                         </td>                                         
 
@@ -85,18 +85,18 @@
                                         <select name="hospital" id="hospital" class="form-control">
                                             <option value="CRM Liquor">CRM Liquor</option>
                                             <option value="Complexo Hospitalar Edmundo Vasconcelos">Complexo Hospitalar Edmundo Vasconcelos - (11) 5080-4000</option>
-                                            <option value="Hospital AssunÁ„o">Hospital AssunÁ„o - (11) 4344-8000</option>
+                                            <option value="Hospital Assun√ß√£o">Hospital Assun√ß√£o - (11) 4344-8000</option>
                                             <option value="Hospital Bom Clima">Hospital Bom Clima - (11) 2472-4200</option>
-                                            <option value="Hospital Bosque da Sa˙de">Hospital Bosque da Sa˙de -(11) 5591-7500</option>
+                                            <option value="Hospital Bosque da Sa√∫de">Hospital Bosque da Sa√∫de -(11) 5591-7500</option>
                                             <option value="Hospital Carlos Chagas">Hospital Carlos Chagas - (11) 2463-5000</option>
                                             <option value="Hospital da Luz (Santo Amaro)">Hospital da Luz (Santo Amaro) - (11) 2185-0500</option>
                                             <option value="Hospital da Luz (Vila Mariana)">Hospital da Luz (Vila Mariana) - (11) 2117-6000</option>
                                             <option value="Hospital e Maternidade Brasil">Hospital e Maternidade Brasil - (11) 2127-6666</option>
                                             <option value="Hospital e Maternidade Jardins">Hospital e Maternidade Jardins - (11) 3068-5888</option>
-                                            <option value="Hospital Jardim Helena (S„o Miguel)">Hospital Jardim Helena (S„o Miguel) - (11) 2582-8500</option>
+                                            <option value="Hospital Jardim Helena (S√£o Miguel)">Hospital Jardim Helena (S√£o Miguel) - (11) 2582-8500</option>
                                             <option value="Hospital Montemagno">Hospital Montemagno - (11) 2076-4000</option>
                                             <option value="Hospital Nipo Brasileiro">Hospital Nipo Brasileiro - (11) 2633-2318</option>
-                                            <option value="Hospital Paranagu·">Hospital Paranagu· - (11) 2542-4000</option>
+                                            <option value="Hospital Paranagu√°">Hospital Paranagu√° - (11) 2542-4000</option>
                                             <option value="Hospital Sancta Maggiore (Alto da Mooca)">Hospital Sancta Maggiore (Alto da Mooca) - (11) 4085-9910</option>
                                             <option value="Hospital Sancta Maggiore (Itaim Bibi)">Hospital Sancta Maggiore (Itaim Bibi) - (11) 4085-9300</option>
                                             <option value="Hospital Sancta Maggiore (Liberdade)">Hospital Sancta Maggiore (Liberdade) - (11) 4085-9550</option>
@@ -104,20 +104,20 @@
                                             <option value="Hospital Sancta Maggiore (Paraiso)">Hospital Sancta Maggiore (Paraiso) - (11) 4085-9410</option>
                                             <option value="Hospital Sancta Maggiore (Pinheiros)">Hospital Sancta Maggiore (Pinheiros) - (11) 40859195</option>
                                             <option value="Hospital Sancta Maggiore (SB do Campo)">Hospital Sancta Maggiore (SB do Campo) - (11) 4085-9260</option>
-                                            <option value="Hospital Sancta Maggiore (TatuapÈ)">Hospital Sancta Maggiore (TatuapÈ) - (11) 4085-3350</option>
-                                            <option value="Santa Casa de S„o Bernardo do Campo">Santa Casa de S„o Bernardo do Campo - (11) 4353-3300</option>
+                                            <option value="Hospital Sancta Maggiore (Tatuap√©)">Hospital Sancta Maggiore (Tatuap√©) - (11) 4085-3350</option>
+                                            <option value="Santa Casa de S√£o Bernardo do Campo">Santa Casa de S√£o Bernardo do Campo - (11) 4353-3300</option>
                                             <option value="Hospital Santa Helena ( Unimed Paulistana )">Hospital Santa Helena ( Unimed Paulistana ) - (11) 3340-8011</option>
                                             <option value="Hospital Santa Helena (Posto 13)">Hospital Santa Helena (Posto 13) - (11) 4126-6950</option>
                                             <option value="Hospital Santa Helena (Posto 23)">Hospital Santa Helena (Posto 23) - (11) 4336-9999</option>
                                             <option value="Hospital Santa Helena (Posto 9)">Hospital Santa Helena (Posto 9) - (11) 4972-7155</option>
-                                            <option value="Hospital S„o Paulo">Hospital S„o Paulo - (11) 5576-4356</option>
+                                            <option value="Hospital S√£o Paulo">Hospital S√£o Paulo - (11) 5576-4356</option>
                                             <option value="Hospital Stella Maris">Hospital Stella Maris - (11) 2423-8500</option>
                                             <option value="Hospital Vidas">Hospital Vidas - (11) 3321-9450</option>
                                             <option value="Hospital Vidas (Alta Complexidade)">Hospital Vidas (Alta Complexidade) - (11) 2197-8670</option>
-                                            <option value="Hospital VitÛria">Hospital VitÛria - (11) 3581-1000</option>
-                                            <option value="Hospital VitÛria (unidade avanÁada)">Hospital VitÛria (unidade avanÁada) - (11) 4208-1010</option>
-                                            <option value="Santa Casa de S„o Bernardo do Campo">Santa Casa de S„o Bernardo do Campo - (11) 4353-3300</option>
-                                            <option value="Seisa Unidade UrgÍncia">Seisa Unidade UrgÍncia - (11) 2463-6053</option>
+                                            <option value="Hospital Vit√≥ria">Hospital Vit√≥ria - (11) 3581-1000</option>
+                                            <option value="Hospital Vit√≥ria (unidade avan√ßada)">Hospital Vit√≥ria (unidade avan√ßada) - (11) 4208-1010</option>
+                                            <option value="Santa Casa de S√£o Bernardo do Campo">Santa Casa de S√£o Bernardo do Campo - (11) 4353-3300</option>
+                                            <option value="Seisa Unidade Urg√™ncia">Seisa Unidade Urg√™ncia - (11) 2463-6053</option>
                                             <option value="Unimed Guarulhos (Unidade 1)">Unimed Guarulhos (Unidade 1) - (11) 2464-2000</option>
                                             <option value="Unimed Guarulhos (Unidade 2)">Unimed Guarulhos (Unidade 2) - (11) 2447-9000</option>
                                         </select>
@@ -132,7 +132,7 @@
                                 <br>
 
                                 <div class="form-group" style="margin-left:10px;">
-                                    <label>Outras InformaÁıes:</label>
+                                    <label>Outras Informa√ß√µes:</label>
                                     <br>
                                     <textarea class="form-control" id="outrasInformacoes" name="outrasInformacoes" style="height: 100px;"></textarea>
                                 </div>
@@ -141,7 +141,7 @@
                                 <br><br>
 
                                 <center>
-                                    <a href="#" class="btn-submit" onclick="   document.getElementById('tab-2').click()">PrÛximo <i class="fa fa-chevron-right"></i></a>
+                                    <a href="#" class="btn-submit" onclick="   document.getElementById('tab-2').click()">Pr√≥ximo <i class="fa fa-chevron-right"></i></a>
                                 </center>
 
                                 <br>
@@ -178,7 +178,7 @@
                                         </td>
 
                                         <td class="tab-lis">
-                                        <label class="lis"> Respons·vel: </label>
+                                        <label class="lis"> Respons√°vel: </label>
                                         <input type="text" id="responsavel" name="responsavel" class="form-control" size="17">
                                         </td> 
                                         </tr>
@@ -194,7 +194,7 @@
                                         <select class="form-control">
                                             <option></option>
                                             <option>Sim</option>
-                                            <option>N„o</option>
+                                            <option>N√£o</option>
                                         </select>
                                         </td>
 
@@ -223,7 +223,7 @@
                                         </td>
 
                                         <td class="tab-lis">
-                                        <label class="lis"> CPF do Paciente ou Respons·vel:</label> 
+                                        <label class="lis"> CPF do Paciente ou Respons√°vel:</label> 
                                         <input type="text" id="cpfePaciente" name="cpfPaciente" class="form-control">
                                         </td>
 
@@ -253,19 +253,19 @@
                                 <br>
 
                                 <div class="form-group" style="margin-left:10px;">
-                                    <label>HipÛtese DiagnÛstica:</label>
+                                    <label>Hip√≥tese Diagn√≥stica:</label>
                                     <br>
                                     <textarea class="form-control" id="HDPaciente" name="HDPaciente" style="height: 100px;"></textarea>
                                 </div>
 
                                 <div class="form-group" style="margin-left:10px;">
-                                    <label>Quadro ClÌnico:</label>
+                                    <label>Quadro Cl√≠nico:</label>
                                     <br>
                                     <textarea class="form-control" id="QCPaciente" name="QCPaciente" style="height: 100px;"></textarea>
                                 </div>
 
                                 <div class="form-group" style="margin-left:10px;">
-                                    <label>Outras InformaÁıes:</label>
+                                    <label>Outras Informa√ß√µes:</label>
                                     <br>
                                     <textarea class="form-control" id="outrasInformacoesPaciente" name="outrasInformacoesPaciente" style="height: 100px;"></textarea>
                                 </div>
@@ -273,7 +273,7 @@
                                 <br>  
                                 <center>
                                     <a href="#" class="btn-submit" onclick="   document.getElementById('tab-1').click()"> <i class="fa fa-chevron-left"></i> Anterior</a> &nbsp;&nbsp;   
-                                    <a href="#" class="btn-submit" onclick="   document.getElementById('tab-3').click()">PrÛximo <i class="fa fa-chevron-right"></i></a>
+                                    <a href="#" class="btn-submit" onclick="   document.getElementById('tab-3').click()">Pr√≥ximo <i class="fa fa-chevron-right"></i></a>
                                 </center>
 
 
@@ -288,7 +288,7 @@
                             <div class="tab-pane" id="three">
 
                                 <br>
-                                <div class="linha"> <h4> Dados do ConvÍnio </h4> </div> 
+                                <div class="linha"> <h4> Dados do Conv√™nio </h4> </div> 
                                 <hr>
 
                                 <div class="table-responsive">
@@ -300,17 +300,17 @@
                                         </tr>
                                         <tr>
                                         <td class="tab-lis">
-                                        <label class="lis"> ConvÍnio:</label> 
+                                        <label class="lis"> Conv√™nio:</label> 
                                         <input type="text" name="convenio" id="convenio" class="form-control" size="17">
                                         </td>
 
                                         <td class="tab-lis">
-                                        <label class="lis"> N∞ Carteirinha:</label> 
+                                        <label class="lis"> N¬∞ Carteirinha:</label> 
                                         <input type="text" name="numeroCarteirinha" id="numeroCarteirinha" class="form-control">
                                         </td>
 
                                         <td class="tab-lis">
-                                        <label class="lis"> Prontu·rio:</label> 
+                                        <label class="lis"> Prontu√°rio:</label> 
                                         <input type="text" id="prontuario" name="prontuario" class="form-control">
                                         </td>
 
@@ -329,14 +329,14 @@
                                         
                                         <tr>
                                         <td class="tab-lis">
-                                        <label class="lis">CRM MÈdico Solicitante: </label>
+                                        <label class="lis">CRM M√©dico Solicitante: </label>
                                         <input type="text" id="crm" name="crm" class="form-control">
                                         </td>
 
 
 
                                         <td class="tab-lis">
-                                        <label class="lis"> MÈdico Solicitante:</label> 
+                                        <label class="lis"> M√©dico Solicitante:</label> 
                                         <input type="text" id="medicoSolicitante" name="medicoSolicitante" class="form-control">
                                         </td>
                                         </tr>
@@ -350,7 +350,7 @@
                                 <br><br><br>
                                 <center>
                                     <a href="#" class="btn-submit" onclick="   document.getElementById('tab-2').click()"> <i class="fa fa-chevron-left"></i> Anterior</a> &nbsp;&nbsp;   
-                                    <a href="#" class="btn-submit" onclick="   document.getElementById('tab-4').click()">PrÛximo <i class="fa fa-chevron-right"></i></a>
+                                    <a href="#" class="btn-submit" onclick="   document.getElementById('tab-4').click()">Pr√≥ximo <i class="fa fa-chevron-right"></i></a>
                                 </center>
                                 <br>
 
@@ -372,22 +372,22 @@
 
                                             <tr style="background-color: #6C7B8B;">                                            
                                             <th style="color:#fff;"> <input type="checkbox" class="form-control" onClick="toggle(this)"/> </th>
-                                            <th style="color:#fff;"> MnemÙnico </th>
+                                            <th style="color:#fff;"> Mnem√¥nico </th>
                                             <th style="color:#fff;"> Sigla </th>
-                                            <th style="color:#fff;"> DescriÁ„o </th>
+                                            <th style="color:#fff;"> Descri√ß√£o </th>
                                             </tr>
 
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar1"/></td>
                                             <td class="tab-lis"> CFLCR </td>
                                             <td class="tab-lis"> CFLCR </td>
-                                            <td class="tab-lis"> EXAME FÕSICO </td>
+                                            <td class="tab-lis"> EXAME F√çSICO </td>
                                             </tr>
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar2"/></td>
                                             <td class="tab-lis"> 40601129 </td>
                                             <td class="tab-lis"> CITO </td>
-                                            <td class="tab-lis"> CITOL”GICO DIFERENCIAL LCR </td>
+                                            <td class="tab-lis"> CITOL√ìGICO DIFERENCIAL LCR </td>
                                             </tr>
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar3"/></td>
@@ -405,13 +405,13 @@
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar5"/></td>
                                             <td class="tab-lis"> CON </td>
                                             <td class="tab-lis"> CON </td>
-                                            <td class="tab-lis"> CONCLUS√O </td>
+                                            <td class="tab-lis"> CONCLUS√ÉO </td>
                                             </tr>
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar6"/></td>
                                             <td class="tab-lis"> EMIC</td>
                                             <td class="tab-lis"> EMIC</td>
-                                            <td class="tab-lis"> EXAME MICROSC”PICO </td>
+                                            <td class="tab-lis"> EXAME MICROSC√ìPICO </td>
                                             </tr>
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar7"/></td>
@@ -423,35 +423,35 @@
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar8"/></td>
                                             <td class="tab-lis"> HIPOT</td>
                                             <td class="tab-lis"> HIPOT </td>
-                                            <td class="tab-lis"> HIP”TESE DIAGN”STICA </td>
+                                            <td class="tab-lis"> HIP√ìTESE DIAGN√ìSTICA </td>
                                             </tr>
 
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar9"/></td>
                                             <td class="tab-lis"> 40302377</td>
                                             <td class="tab-lis"> PROTLCR </td>
-                                            <td class="tab-lis"> PROTEÕNA LÕQUOR </td>
+                                            <td class="tab-lis"> PROTE√çNA L√çQUOR </td>
                                             </tr>
 
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar10"/></td>
                                             <td class="tab-lis"> QCL</td>
                                             <td class="tab-lis"> QCL </td>
-                                            <td class="tab-lis"> QUADRO CLÕNICO </td>
+                                            <td class="tab-lis"> QUADRO CL√çNICO </td>
                                             </tr>
 
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar11"/></td>
                                             <td class="tab-lis"> 40309100</td>
                                             <td class="tab-lis"> LCRAMB</td>
-                                            <td class="tab-lis"> Rotina de LCR (Caracteres Gerais, Contagem Global e especifica , Dosagem de Cloretos , Glicose , Proteinas , ReaÁıes de VDRL ) </td>
+                                            <td class="tab-lis"> Rotina de LCR (Caracteres Gerais, Contagem Global e especifica , Dosagem de Cloretos , Glicose , Proteinas , Rea√ß√µes de VDRL ) </td>
                                             </tr>
 
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar12"/></td>
                                             <td class="tab-lis"> 40309150</td>
                                             <td class="tab-lis"> PUNC</td>
-                                            <td class="tab-lis"> PUN«√O LIQUORICA </td>
+                                            <td class="tab-lis"> PUN√á√ÉO LIQUORICA </td>
                                             </tr>
 
 
@@ -470,7 +470,7 @@
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar15"/></td>
                                             <td class="tab-lis"> 40307751 </td>
                                             <td class="tab-lis"> TPHA </td>
-                                            <td class="tab-lis"> TREPONEMA PALLIDUM , REA«√O DE HEMAGLUTINA«√O </td>
+                                            <td class="tab-lis"> TREPONEMA PALLIDUM , REA√á√ÉO DE HEMAGLUTINA√á√ÉO </td>
                                             </tr>
 
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar16"/></td>
@@ -482,7 +482,7 @@
                                             <tr><td class="tab-lis"> <input type="checkbox" name="exame" value="bar17"/></td>
                                             <td class="tab-lis"> 40307760 </td>
                                             <td class="tab-lis"> VDRLCR </td>
-                                            <td class="tab-lis"> REA«√O DE VDRL - LIQUOR </td>
+                                            <td class="tab-lis"> REA√á√ÉO DE VDRL - LIQUOR </td>
                                             </tr>
 
                                         </table>
