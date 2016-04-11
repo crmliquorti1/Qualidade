@@ -13,9 +13,9 @@
 
 <body onload="startTime()">
 
-    <jsp:include page = "../include/navegation.jsp" />
+   <%--  <jsp:include page = "../include/navegation.jsp" />
 
-    <form name="form1" action="/Qualidade/CriarFuncionarioServlet" method="POST" onSubmit="return validaNome()"   enctype="multipart/form-data" name="cadFunc">
+   --%><form name="form1" action="/Qualidade/CriarFuncionarioServlet" method="POST" onSubmit="return validaNome()"   enctype="multipart/form-data" name="cadFunc">
 
         <section class="formulario">
             <div class="tudo">
@@ -68,7 +68,7 @@
 
                                                         var aux = document.getElementById("nome").value;
 
-                                                        if (aux == '' || aux == null) {
+                                                        if (aux === '' || aux === null) {
                                                             alert("E necessario preencher o campo nome");
                                                             return false;
                                                         }
@@ -685,7 +685,28 @@
                                     <input type="hidden" name="MAX_FILE_SIZE" value="99999999"/>
                                     <input type="file" name="foto" onchange="openFile(event)" id="foto" accept="image/*" class="form-control">
                                     <br><br>
+                                    
+                                    
+                                    <form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
 
+                                        <fieldset>
+
+                                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+
+                                            <div>
+                                                <label for="fileselect">Arquivos para upload:</label>
+                                                <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                                                <div id="filedrag">ou arreste para cá</div>
+                                            </div>
+                                            
+
+                                        </fieldset>
+
+                                    </form>
+                                    <div id="messages">
+
+                                    </div>
+                                    
                                     <center>
                                         <a href="#" class="btn-submit" onclick="   document.getElementById('tab-3').click()"> <i class="fa fa-chevron-left"></i> Anterior</a> &nbsp;&nbsp;   
 
@@ -707,6 +728,125 @@
             </div>
         </section>
 
+<style>
+   #filedrag
+{
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	cursor: default;
+}
+
+#filedrag.hover
+{
+	color: #00f;
+	border-color: #00f;
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #888;
+}
+
+
+
+#messages
+{
+	padding: 0 10px;
+	margin: 1em 0;
+	border: 1px solid #999;
+}
+</style>
+
+<script>
+(function() {
+
+	// getElementById
+	function $id(id) {
+		return document.getElementById(id);
+	}
+
+
+	// output information
+	function Output(msg) {
+		var m = $id("messages");
+		m.innerHTML = msg + m.innerHTML;
+	}
+
+
+	// file drag hover
+	function FileDragHover(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		e.target.className = (e.type == "dragover" ? "hover" : "");
+	}
+
+
+	// file selection
+	function FileSelectHandler(e) {
+
+		// cancel event and hover styling
+		FileDragHover(e);
+
+		// fetch FileList object
+		var files = e.target.files || e.dataTransfer.files;
+
+		// process all File objects
+		for (var i = 0, f; f = files[i]; i++) {
+			ParseFile(f);
+		}
+
+	}
+
+
+	// output file information
+	function ParseFile(file) {
+
+		Output(
+			"<p> <strong>" + file.name +
+			"</p>"
+		);
+
+	}
+
+
+	// initialize
+	function Init() {
+
+		var fileselect = $id("fileselect"),
+			filedrag = $id("filedrag"),
+			submitbutton = $id("submitbutton");
+
+		// file select
+		fileselect.addEventListener("change", FileSelectHandler, false);
+
+		// is XHR2 available?
+		var xhr = new XMLHttpRequest();
+		if (xhr.upload) {
+
+			// file drop
+			filedrag.addEventListener("dragover", FileDragHover, false);
+			filedrag.addEventListener("dragleave", FileDragHover, false);
+			filedrag.addEventListener("drop", FileSelectHandler, false);
+			filedrag.style.display = "block";
+
+			// remove submit button
+			submitbutton.style.display = "none";
+		}
+
+	}
+
+	// call initialization file
+	if (window.File && window.FileList && window.FileReader) {
+		Init();
+	}
+
+
+})();
+</script>
+
 
         <script type="text/javascript">
 
@@ -715,7 +855,7 @@
 
                 $("#cep").blur(function (e) {
 
-                    if ($.trim($("#cep").val()) != "") {
+                    if ($.trim($("#cep").val()) !== "") {
                         var aux = $.trim($("#cep").val().replace("-", ""));
                         $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep=" + aux, function () {
                             if (resultadoCEP["resultado"]) {
@@ -755,7 +895,7 @@
 
         //adiciona mascara ao CPF
         function MascaraCPF(cpf) {
-            if (mascaraInteiro(cpf) == false) {
+            if (mascaraInteiro(cpf) === false) {
                 event.returnValue = false;
             }
             return formataCampo(cpf, '000.000.000-00', event);
@@ -767,7 +907,7 @@
 //valida o CPF digitado
         function ValidarCPF(Objcpf) {
             var cpf = Objcpf.value;
-            exp = /\.|\-/g
+            exp = /\.|\-/g;
             cpf = cpf.toString().replace(exp, "");
             var digitoDigitado = eval(cpf.charAt(9) + cpf.charAt(10));
             var soma1 = 0, soma2 = 0;
@@ -778,11 +918,11 @@
                 soma2 += eval(cpf.charAt(i) * vlr);
                 vlr--;
             }
-            soma1 = (((soma1 * 10) % 11) == 10 ? 0 : ((soma1 * 10) % 11));
+            soma1 = (((soma1 * 10) % 11) === 10 ? 0 : ((soma1 * 10) % 11));
             soma2 = (((soma2 + (2 * soma1)) * 10) % 11);
 
             var digitoGerado = (soma1 * 10) + soma2;
-            if (digitoGerado != digitoDigitado) {
+            if (digitoGerado !== digitoDigitado) {
                 alert('CPF Invalido!');
             document.getElementById('cpf').value='';
         }
@@ -804,7 +944,7 @@
             var dig1 = new Number;
             var dig2 = new Number;
 
-            exp = /\.|\-|\//g
+            exp = /\.|\-|\//g;
             cnpj = cnpj.toString().replace(exp, "");
             var digito = new Number(eval(cnpj.charAt(12) + cnpj.charAt(13)));
 
@@ -815,7 +955,7 @@
             dig1 = (((dig1 % 11) < 2) ? 0 : (11 - (dig1 % 11)));
             dig2 = (((dig2 % 11) < 2) ? 0 : (11 - (dig2 % 11)));
 
-            if (((dig1 * 10) + dig2) != digito)
+            if (((dig1 * 10) + dig2) !== digito)
                 alert('CNPJ Invalido!');
 
         }
@@ -825,7 +965,7 @@
             var boleanoMascara;
 
             var Digitato = evento.keyCode;
-            exp = /\-|\.|\/|\(|\)| /g
+            exp = /\-|\.|\/|\(|\)| /g;
             campoSoNumeros = campo.value.toString().replace(exp, "");
 
             var posicaoCampo = 0;
@@ -833,12 +973,12 @@
             var TamanhoMascara = campoSoNumeros.length;
             ;
 
-            if (Digitato != 8) { // backspace 
+            if (Digitato !== 8) { // backspace 
                 for (i = 0; i <= TamanhoMascara; i++) {
-                    boleanoMascara = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".")
-                            || (Mascara.charAt(i) == "/"))
-                    boleanoMascara = boleanoMascara || ((Mascara.charAt(i) == "(")
-                            || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "))
+                    boleanoMascara = ((Mascara.charAt(i) === "-") || (Mascara.charAt(i) === ".")
+                            || (Mascara.charAt(i) === "/"));
+                    boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === "(")
+                            || (Mascara.charAt(i) === ")") || (Mascara.charAt(i) === " "));
                     if (boleanoMascara) {
                         NovoValorCampo += Mascara.charAt(i);
                         TamanhoMascara++;
@@ -865,10 +1005,10 @@
         });
         $(".aba").hover(
                 function () {
-                    $(this).addClass("ativa")
+                    $(this).addClass("ativa");
                 },
                 function () {
-                    $(this).removeClass("ativa")
+                    $(this).removeClass("ativa");
                 }
         );
         $(".aba").click(function () {
