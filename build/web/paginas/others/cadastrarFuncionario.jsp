@@ -13,9 +13,9 @@
 
 <body onload="startTime()">
 
-   <%--  <jsp:include page = "../include/navegation.jsp" />
+    <jsp:include page = "../include/navegation.jsp" />
 
-   --%><form name="form1" action="/Qualidade/CriarFuncionarioServlet" method="POST" onSubmit="return validaNome()"   enctype="multipart/form-data" name="cadFunc">
+        <form name="form1" action="/Qualidade/CriarFuncionarioServlet" method="POST" onSubmit="return validaNome()"   enctype="multipart/form-data" name="cadFunc">
 
         <section class="formulario">
             <div class="tudo">
@@ -780,7 +780,7 @@
 	function FileDragHover(e) {
 		e.stopPropagation();
 		e.preventDefault();
-		e.target.className = (e.type == "dragover" ? "hover" : "");
+		e.target.className = (e.type === "dragover" ? "hover" : "");
 	}
 
 
@@ -868,7 +868,8 @@
                             }
                         });
                     }
-                })
+                }
+                        )
             });
         </script>
 
