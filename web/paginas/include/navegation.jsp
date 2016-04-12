@@ -77,49 +77,49 @@
                     // Tratamento dos Dias da Semana
 
 
-                    if (myday === 0)
+                    if (myday == 0)
                         day = " Domingo, ";
 
 
 
 
 
-                    else if (myday === 1)
+                    else if (myday == 1)
                         day = " Segunda Feira, ";
 
 
 
 
 
-                    else if (myday === 2)
+                    else if (myday == 2)
                         day = " Terça Feira, ";
 
 
 
 
 
-                    else if (myday === 3)
+                    else if (myday == 3)
                         day = " Quarta Feira, ";
 
 
 
 
 
-                    else if (myday === 4)
+                    else if (myday == 4)
                         day = " Quinta Feira, ";
 
 
 
 
 
-                    else if (myday === 5)
+                    else if (myday == 5)
                         day = " Sexta Feira, ";
 
 
 
 
 
-                    else if (myday === 6)
+                    else if (myday == 6)
                         day = " Sábado, ";
 
 
@@ -129,84 +129,84 @@
                     //Tratamento dos Meses
 
 
-                    if (mymonth === 0)
+                    if (mymonth == 0)
                         month = " de Janeiro de ";
 
 
 
 
 
-                    else if (mymonth === 1)
+                    else if (mymonth == 1)
                         month = " de Fevereiro de ";
 
 
 
 
 
-                    else if (mymonth === 2)
+                    else if (mymonth == 2)
                         month = " de Março de ";
 
 
 
 
 
-                    else if (mymonth === 3)
+                    else if (mymonth == 3)
                         month = " de Abril de ";
 
 
 
 
 
-                    else if (mymonth === 4)
+                    else if (mymonth == 4)
                         month = " de Maio de ";
 
 
 
 
 
-                    else if (mymonth === 5)
+                    else if (mymonth == 5)
                         month = " de Junho de ";
 
 
 
 
 
-                    else if (mymonth === 6)
+                    else if (mymonth == 6)
                         month = " de Julho de ";
 
 
 
 
 
-                    else if (mymonth === 7)
+                    else if (mymonth == 7)
                         month = " de Agosto de ";
 
 
 
 
 
-                    else if (mymonth === 8)
+                    else if (mymonth == 8)
                         month = " de Setembro de ";
 
 
 
 
 
-                    else if (mymonth === 9)
+                    else if (mymonth == 9)
                         month = " de Outubro de ";
 
 
 
 
 
-                    else if (mymonth === 10)
+                    else if (mymonth == 10)
                         month = " de Novembro de ";
 
 
 
 
 
-                    else if (mymonth === 11)
+                    else if (mymonth == 11)
                         month = " de Dezembro de ";
 
 
