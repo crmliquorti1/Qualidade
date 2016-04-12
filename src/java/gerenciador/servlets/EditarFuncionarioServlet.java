@@ -10,6 +10,7 @@ import gerenciador.persistencia.DaoException;
 import gerenciador.persistencia.PessoaDaoFactory;
 import gerenciador.persistencia.PessoaDaoInterface;
 import gerenciador.servlets.utils.SessionUtils;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.servlet.ServletException;
@@ -163,9 +164,11 @@ public class EditarFuncionarioServlet extends HttpServlet {
             request.setAttribute("acao", "ListarFuncionario");
             try {
 //            session.setAttribute("lista_funcionarios", dao.listarTodas());
+                File file = new File("C:\\Users\\ti1\\Desktop\\" + dao.buscarPessoa(Integer.valueOf(matricula)).getNome() + "_" + matricula);
+                File dest = new File("C:\\Users\\ti1\\Desktop\\" + nome + "_" + matricula);
                 request.setAttribute("acao", "ListarFuncionarioAtivo");
                 if (dao.editarPessoa(pessoa)) {
-
+                    file.renameTo(dest);
                     SessionUtils.GerarLogFuncionario(log);
                     pagina = "/paginas/others/sucesso.jsp";
 
@@ -185,8 +188,10 @@ public class EditarFuncionarioServlet extends HttpServlet {
 //            session.setAttribute("lista_funcionarios", dao.listarTodas());
 
                 request.setAttribute("acao", "ListarFuncionarioAtivo");
-
+                File file = new File("C:\\Users\\ti1\\Desktop\\" + dao.buscarPessoa(Integer.valueOf(matricula)).getNome() + "_" + matricula);
+                File dest = new File("C:\\Users\\ti1\\Desktop\\" + nome + "_" + matricula);
                 if (dao.editarPessoaSFoto(pessoa)) {
+                    file.renameTo(dest);
                     SessionUtils.GerarLogFuncionario(log);
                     pagina = "/paginas/others/sucesso.jsp";
 

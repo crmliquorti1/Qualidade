@@ -36,6 +36,8 @@ public class PessoaDaoImpl implements PessoaDaoInterface, Serializable {
     PreparedStatement getPhoto;
     PreparedStatement validaLogin;
     PreparedStatement validaAcesso;
+    PreparedStatement buscaMatricula;
+    
 
     public PessoaDaoImpl(ConexaoInterface conexao) {
         this.conexao = conexao;
@@ -206,6 +208,9 @@ public class PessoaDaoImpl implements PessoaDaoInterface, Serializable {
 
             sql = "SELECT * FROM funcionario WHERE login = ? AND senha=?";
             validaAcesso = conexao.getConnection().prepareStatement(sql);
+            
+            sql = "SELECT * FROM funcionario WHERE cpf = ?";
+            buscaMatricula = conexao.getConnection().prepareStatement(sql);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -724,6 +729,24 @@ public class PessoaDaoImpl implements PessoaDaoInterface, Serializable {
             return null;
         }
         return null;
+    }
+
+    @Override
+    public int buscaMatricula(String cpf) throws DaoException {
+
+        try {
+            buscaMatricula.setString(1, cpf);
+            
+            ResultSet result = buscaMatricula.executeQuery();
+            
+            while (result.next()) {
+                return result.getInt("id_funcionario");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(PessoaDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
     }
 
 }

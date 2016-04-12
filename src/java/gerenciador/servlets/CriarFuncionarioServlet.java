@@ -5,6 +5,7 @@ import gerenciador.persistencia.DaoException;
 import gerenciador.persistencia.PessoaDaoFactory;
 import gerenciador.persistencia.PessoaDaoInterface;
 import gerenciador.servlets.utils.SessionUtils;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.servlet.ServletException;
@@ -157,7 +158,8 @@ public class CriarFuncionarioServlet extends HttpServlet {
             if (dao.verificaDuplicidade(cpf)) {
 
                 if (dao.cadastrar(pessoa)) {
-
+                    File file = new File("C:\\Users\\ti1\\Desktop\\" + nome + "_" + String.valueOf(dao.buscaMatricula(cpf)));
+                    file.mkdir();
                     SessionUtils.GerarLogFuncionario(log);
                     pagina = "/paginas/others/sucesso.jsp";
 
