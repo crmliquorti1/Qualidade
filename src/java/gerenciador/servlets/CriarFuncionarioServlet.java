@@ -158,7 +158,7 @@ public class CriarFuncionarioServlet extends HttpServlet {
             if (dao.verificaDuplicidade(cpf)) {
 
                 if (dao.cadastrar(pessoa)) {
-                    File file = new File("C:\\Users\\ti1\\Desktop\\" + nome + "_" + String.valueOf(dao.buscaMatricula(cpf)));
+                    File file = new File("R:\\Qualidade\\Recursos Humanos\\" + nome + "_" + String.valueOf(dao.buscaMatricula(cpf)));
                     file.mkdir();
                     SessionUtils.GerarLogFuncionario(log);
                     pagina = "/paginas/others/sucesso.jsp";

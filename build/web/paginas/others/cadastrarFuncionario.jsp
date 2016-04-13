@@ -13,7 +13,7 @@
 
 <body onload="startTime()">
 
-  <jsp:include page = "../include/navegation.jsp" />
+    <jsp:include page = "../include/navegation.jsp" />
 
         <form name="form1" action="/Qualidade/CriarFuncionarioServlet" method="POST" onSubmit="return validaNome()"   enctype="multipart/form-data" name="cadFunc">
 
@@ -686,6 +686,9 @@
                                     <input type="file" name="foto" onchange="openFile(event)" id="foto" accept="image/*" class="form-control">
                                     <br><br>
                                     
+                                <div id="messages">
+
+                                    </div>
                                     
                                     <center>
                                         <a href="#" class="btn-submit" onclick="   document.getElementById('tab-3').click()"> <i class="fa fa-chevron-left"></i> Anterior</a> &nbsp;&nbsp;   

@@ -19,7 +19,7 @@ public class ListarDocsPessoa{
     public static List retornaDocumentos (String diretorio) {
         
         try {
-        File file = new File("C:\\Users\\ti1\\Desktop\\" + diretorio);
+        File file = new File("R:\\Qualidade\\Recursos Humanos\\" + diretorio);
         File afile[] = file.listFiles();
         int i = 0;
         List<Documento> lista = new ArrayList<Documento>();

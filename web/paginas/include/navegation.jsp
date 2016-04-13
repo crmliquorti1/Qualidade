@@ -253,9 +253,11 @@
     <div style=''>
         <ul class='topo2' style=''>
 
-            
+            <%
+                Pessoa pessoa = (Pessoa) session.getAttribute("usuario");
+            %>
 
-            <li>Você está acessando como </li>
+            <li>Você está acessando como <%= pessoa.getNome()%></li>
 
             <li>
                 <form action="/Qualidade/LogoutServlet" method="POST">

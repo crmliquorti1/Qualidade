@@ -28,74 +28,88 @@
         <div class="table-head">
 
             <a href="paginas/others/cadastrarFuncionario.jsp" button type="button" style="margin-top:1%; margin-bottom:1%; margin-left:1%;" class="btn btn-default" align="right">Cadastrar Nova</button> </a>
+            
+      
+            
+            <form action="FrontControllerServlet" method="POST">
+            
+                
+                <label>Buscar pelo Nome: </label> &nbsp;<input type="search" name="nomeBusca"> &nbsp;
+                <input type="hidden" name="controle" value="BuscaFuncionario">
+                
+                <input type="submit" value="buscar" class="btn btn-default"> &nbsp;
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </form>
             <br>
+            <br>
+
         </div>
 
-    <div class="table-responsive">
-        <table class="table table-striped" width="100%" height="100%" border="1">
+        <div class="table-responsive">
+            <table class="table table-striped" width="100%" height="100%" border="1">
 
-            <tbody>
-                <thead>
-
-
-
-                    <tr style="background-color: #6C7B8B;">
-                    <th width="169" style="color:#fff;">Nome </th>
-                    <th width="73" style="color:#fff;">Login </th>
-                    <th width="181" style="color:#fff;">Email </th>
-                    <th width="270" style="color:#fff;">Cargo</th>
-                    <th width="160" style="color:#fff;">Nível de Acesso</th>
-                    <th width="90" style="color:#fff;">&nbsp;  </th>
-                    <th width="90" style="color:#fff;">&nbsp;  </th>
-                    </tr>
-
-                </thead>
-
-                <c:forEach var="u" items="${lista_funcionarios}">
+                <tbody>
+                    <thead>
 
 
-                    <tr>
-                    <td>
-                        <form action="FrontControllerServlet" method="POST">
-                            <input type="hidden" name="controle" value="PerfilFuncionario">
-                            <input type="hidden" name="id_funcionario" value="${u.id_funcionario}">
-                            <input type="submit" value="${u.nome}" class="botaoFunc">                            
-                        </form>
-                    </td>
-                    <td>${u.login}</td>
-                    <td>${u.email}</td>
-                    <td>${u.cargoPrincipal} </td>
-                    <td>${u.acesso} </td>
-                    <td>
-                        <form action="FrontControllerServlet" method="POST">
-                            <center>
-                                <button type="submit" class="btn btn-default">Alterar</button>
-                                <input type="hidden" name="controle" id="controle" value="ListarEdicaoFuncionario">
-                                <input type="hidden" name="id_funcionario" id="id_funcionario" value="${u.id_funcionario}">
-                            </center>
-                        </form>
-                    </td>
-                    <td>
 
-                        <center>
+                        <tr style="background-color: #6C7B8B;">
+                        <th width="169" style="color:#fff;">Nome </th>
+                        <th width="73" style="color:#fff;">Login </th>
+                        <th width="181" style="color:#fff;">Email </th>
+                        <th width="270" style="color:#fff;">Cargo</th>
+                        <th width="160" style="color:#fff;">Nível de Acesso</th>
+                        <th width="90" style="color:#fff;">&nbsp;  </th>
+                        <th width="90" style="color:#fff;">&nbsp;  </th>
+                        </tr>
 
-                            <form action="/Qualidade/FrontControllerServlet" method="POST">
+                    </thead>
+
+                    <c:forEach var="u" items="${lista_funcionarios}">
 
 
-                                <input type="hidden" name="controle" id="controle" value="ExcluirFuncionario">
-                                <input type="hidden" name="id_funcionario" id="id_funcionario" value="${u.id_funcionario}">
-                                <button  type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?');"> <i class="fa fa-trash"></i></button>
+                        <tr>
+                        <td>
+                            <form action="FrontControllerServlet" method="POST">
+                                <input type="hidden" name="controle" value="PerfilFuncionario">
+                                <input type="hidden" name="id_funcionario" value="${u.id_funcionario}">
+                                <input type="submit" value="${u.nome}" class="botaoFunc">                            
                             </form>
-                        </center>
+                        </td>
+                        <td>${u.login}</td>
+                        <td>${u.email}</td>
+                        <td>${u.cargoPrincipal} </td>
+                        <td>${u.acesso} </td>
+                        <td>
+                            <form action="FrontControllerServlet" method="POST">
+                                <center>
+                                    <button type="submit" class="btn btn-default">Alterar</button>
+                                    <input type="hidden" name="controle" id="controle" value="ListarEdicaoFuncionario">
+                                    <input type="hidden" name="id_funcionario" id="id_funcionario" value="${u.id_funcionario}">
+                                </center>
+                            </form>
+                        </td>
+                        <td>
 
-                    </td>
-                    </tr>
+                            <center>
 
-                </c:forEach>
+                                <form action="/Qualidade/FrontControllerServlet" method="POST">
 
 
-            </tbody>
-        </table>
+                                    <input type="hidden" name="controle" id="controle" value="ExcluirFuncionario">
+                                    <input type="hidden" name="id_funcionario" id="id_funcionario" value="${u.id_funcionario}">
+                                    <button  type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?');"> <i class="fa fa-trash"></i></button>
+                                </form>
+                            </center>
+
+                        </td>
+                        </tr>
+
+                    </c:forEach>
+
+
+                </tbody>
+            </table>
         </div>
 
     </div>

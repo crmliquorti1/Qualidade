@@ -270,60 +270,9 @@
 
 </nav>
 
-<%
-    if (pessoa.getSetor().equals("Atendimento")) {
-%>    
-
-<jsp:include page = "menu_atendimento.jsp" />
-
-<%}%>
-
-<%
-    if (pessoa.getSetor().equals("Diretoria Clínica")) {
-%>    
+  
 
 <jsp:include page = "menu_diretoria.jsp" />
 
-<%}%>
 
-<%
-    if (pessoa.getSetor().equals("Faturamento")) {
-%>    
-
-<jsp:include page = "menu_faturamento.jsp" />
-
-<%}%>
-
-<%
-    if (pessoa.getSetor().equals("Administração")) {
-%>    
-
-<jsp:include page = "menu_administracao.jsp" />
-
-<%}%>
-
-<%
-    if (pessoa.getSetor().equals("Técnica")) {
-%>    
-
-<jsp:include page = "menu_tecnica.jsp" />
-
-<%}%>
-
-<%
-    if (pessoa.getSetor().equals("Qualidade")) {
-%>    
-
-<jsp:include page = "menu_qualidade.jsp" />
-
-<%}%>
-
-
-<%
-    if (pessoa.getSetor().equals("Recursos Humanos")) {
-%>    
-
-<jsp:include page = "menu_recursosHumanos.jsp" />
-
-<%}%>
 

@@ -24,6 +24,7 @@ public interface PessoaDaoInterface {
     boolean editarPessoaSFoto (Pessoa pessoa) throws DaoException;
     Pessoa validaAcesso(String login, String senha) throws DaoException;
     int buscaMatricula (String cpf) throws DaoException;
+    List<Pessoa> buscaPeloNome (String nome) throws DaoException;
      
     
     

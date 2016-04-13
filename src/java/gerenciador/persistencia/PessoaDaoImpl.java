@@ -37,7 +37,7 @@ public class PessoaDaoImpl implements PessoaDaoInterface, Serializable {
     PreparedStatement validaLogin;
     PreparedStatement validaAcesso;
     PreparedStatement buscaMatricula;
-    
+    PreparedStatement buscaFuncionario;
 
     public PessoaDaoImpl(ConexaoInterface conexao) {
         this.conexao = conexao;
@@ -208,9 +208,12 @@ public class PessoaDaoImpl implements PessoaDaoInterface, Serializable {
 
             sql = "SELECT * FROM funcionario WHERE login = ? AND senha=?";
             validaAcesso = conexao.getConnection().prepareStatement(sql);
-            
+
             sql = "SELECT * FROM funcionario WHERE cpf = ?";
             buscaMatricula = conexao.getConnection().prepareStatement(sql);
+
+            sql = "SELECT * FROM funcionario WHERE nome like ?";
+            buscaFuncionario = conexao.getConnection().prepareStatement(sql);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -736,17 +739,95 @@ public class PessoaDaoImpl implements PessoaDaoInterface, Serializable {
 
         try {
             buscaMatricula.setString(1, cpf);
-            
+
             ResultSet result = buscaMatricula.executeQuery();
-            
+
             while (result.next()) {
                 return result.getInt("id_funcionario");
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(PessoaDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
     }
 
+    @Override
+    public List<Pessoa> buscaPeloNome(String nome) throws DaoException {
+        List<Pessoa> lista = new ArrayList<Pessoa>();
+        Blob image;
+        byte[] imgData = null;
+
+        try {
+            buscaFuncionario.setString(1,"%" + nome + "%");
+
+            ResultSet result = buscaFuncionario.executeQuery();
+
+            while (result.next()) {
+                Pessoa pessoa = new Pessoa();
+                pessoa.setId_funcionario(result.getInt("id_funcionario"));
+                pessoa.setAcesso(result.getString("acesso"));
+                pessoa.setNome(result.getString("nome"));
+                pessoa.setEmail(result.getString("email"));
+                pessoa.setEnvioEmails(result.getString("envioEmails"));
+                pessoa.setMatricula(result.getString("matricula"));
+                pessoa.setAdmissao(result.getString("admissao"));
+                pessoa.setQualificacao(result.getString("qualificacao"));
+//                Cargo cargo = new Cargo();
+//                cargo.setId_cargo(result.getLong("cargoPrincipal"));
+                pessoa.setCargoPrincipal(result.getString("cargoPrincipal"));
+                pessoa.setCargoSecundario(result.getString("cargoSecundario"));
+                pessoa.setSetor(result.getString("setor"));
+                pessoa.setTurno(result.getString("turno"));
+                pessoa.setLogin(result.getString("login"));
+                pessoa.setSenha(result.getString("senha"));
+                pessoa.setDataExpiracao(result.getString("dataExpiracao"));
+                pessoa.setSituacao(result.getString("situacao"));
+                pessoa.setEnviaAviso(result.getString("enviaAviso"));
+                pessoa.setRg(result.getString("rg"));
+                pessoa.setCpf(result.getString("cpf"));
+                pessoa.setDataNascimento(result.getString("dataNascimento"));
+                pessoa.setCtps(result.getString("ctps"));
+                pessoa.setPis(result.getString("pis"));
+                pessoa.setPlanoSaude(result.getString("planoSaude"));
+                pessoa.setPais(result.getString("pais"));
+                pessoa.setCep(result.getString("cep"));
+                pessoa.setEndereco(result.getString("endereco"));
+                pessoa.setNumero(result.getString("numero"));
+                pessoa.setBairro(result.getString("bairro"));
+                pessoa.setComplemento(result.getString("complemento"));
+                pessoa.setEstado(result.getString("estado"));
+                pessoa.setCidade(result.getString("cidade"));
+                pessoa.setTelResidencial(result.getString("telResidencial"));
+                pessoa.setTelCel(result.getString("telCel"));
+                pessoa.setCelEmerg(result.getString("celEmerg"));
+
+                image = (Blob) result.getBlob("foto");
+
+                if (image != null) {
+                    imgData = image.getBytes(1, (int) image.length());
+
+                    pessoa.setFoto(imgData);
+                    String s = new sun.misc.BASE64Encoder().encode(imgData);
+                    pessoa.setEnconder(s);
+                }
+
+                pessoa.setproblemasSaude(result.getString("problemasSaude"));
+                pessoa.setnotasMedicas(result.getString("notasMedicas"));
+                pessoa.setalergiasReacoes(result.getString("alergiasreacoes"));
+                pessoa.setmedicamentos(result.getString("medicamentos"));
+                pessoa.setcontatoEmerg(result.getString("contatoEmerg"));
+                pessoa.setsangue(result.getString("grupoSanguineo"));
+                pessoa.setpeso(result.getString("peso"));
+                pessoa.setdoaOrgao(result.getString("doarorgaos"));
+                pessoa.setLog(result.getString("log"));
+
+                lista.add(pessoa);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PessoaDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lista;
+    }
 }

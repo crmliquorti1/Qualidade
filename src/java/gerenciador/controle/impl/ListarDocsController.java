@@ -21,7 +21,7 @@ public class ListarDocsController extends AbstractController {
     @Override
     public void execute() {
 
-        File file = new File("R:\\Qualidade Documentos\\" + this.getRequest().getParameter("diretorio"));
+        File file = new File("R:\\Qualidade\\documentos\\" + this.getRequest().getParameter("diretorio"));
         File afile[] = file.listFiles();
         int i = 0;
         List<Documento> lista = new ArrayList<Documento>();

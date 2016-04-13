@@ -164,8 +164,8 @@ public class EditarFuncionarioServlet extends HttpServlet {
             request.setAttribute("acao", "ListarFuncionario");
             try {
 //            session.setAttribute("lista_funcionarios", dao.listarTodas());
-                File file = new File("C:\\Users\\ti1\\Desktop\\" + dao.buscarPessoa(Integer.valueOf(matricula)).getNome() + "_" + matricula);
-                File dest = new File("C:\\Users\\ti1\\Desktop\\" + nome + "_" + matricula);
+                File file = new File("R:\\Qualidade\\Recursos Humanos\\" + dao.buscarPessoa(Integer.valueOf(matricula)).getNome() + "_" + matricula);
+                File dest = new File("R:\\Qualidade\\Recursos Humanos\\" + nome + "_" + matricula);
                 request.setAttribute("acao", "ListarFuncionarioAtivo");
                 if (dao.editarPessoa(pessoa)) {
                     file.renameTo(dest);
@@ -188,8 +188,8 @@ public class EditarFuncionarioServlet extends HttpServlet {
 //            session.setAttribute("lista_funcionarios", dao.listarTodas());
 
                 request.setAttribute("acao", "ListarFuncionarioAtivo");
-                File file = new File("C:\\Users\\ti1\\Desktop\\" + dao.buscarPessoa(Integer.valueOf(matricula)).getNome() + "_" + matricula);
-                File dest = new File("C:\\Users\\ti1\\Desktop\\" + nome + "_" + matricula);
+                File file = new File("R:\\Qualidade\\Recursos Humanos\\" + dao.buscarPessoa(Integer.valueOf(matricula)).getNome() + "_" + matricula);
+                File dest = new File("R:\\Qualidade\\Recursos Humanos\\" + nome + "_" + matricula);
                 if (dao.editarPessoaSFoto(pessoa)) {
                     file.renameTo(dest);
                     SessionUtils.GerarLogFuncionario(log);
