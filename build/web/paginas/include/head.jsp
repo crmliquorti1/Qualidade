@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en-US">
     <head>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link href="images/Vinicius_15_AZUL.png" rel="icon" type="image/png" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
