@@ -137,6 +137,9 @@
                                                 <option>Técnica</option>
                                                 <option>Diretoria Clínica</option>
                                                 <option>Qualidade</option>
+                                                <option>T.I.</option>
+                                                <option>Logistica</option>
+                                                <option>Corpo Clinico</option>
                                             </select>
                                             </td>
                                             </tr>

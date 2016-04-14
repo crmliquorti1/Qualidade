@@ -2,10 +2,6 @@
 <!doctype html>
 <html lang="en-US">
     <head>
-<<<<<<< HEAD
-=======
-        <link href="images/Vinicius_15_AZUL.png" rel="icon" type="image/png" />
->>>>>>> origin/master
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">

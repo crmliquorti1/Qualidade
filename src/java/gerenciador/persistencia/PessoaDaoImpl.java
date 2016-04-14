@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gerenciador.persistencia;
 
 import com.mysql.jdbc.Blob;
@@ -212,7 +207,7 @@ public class PessoaDaoImpl implements PessoaDaoInterface, Serializable {
             sql = "SELECT * FROM funcionario WHERE cpf = ?";
             buscaMatricula = conexao.getConnection().prepareStatement(sql);
 
-            sql = "SELECT * FROM funcionario WHERE nome like ?";
+            sql = "SELECT * FROM funcionario WHERE nome like ? AND id_funcionario <> 25";
             buscaFuncionario = conexao.getConnection().prepareStatement(sql);
 
         } catch (Exception e) {

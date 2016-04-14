@@ -39,7 +39,7 @@
         <b> Login: </b> ${funcionario.login} <br>
         <b> Senha: </b> ${funcionario.senha} <br>
         <b> Expiração Senha em: </b> ${funcionario.dataExpiracao} <br>
-        <b> Situação: </b> Ativo <br>
+        <b> Situação: </b> ${funcionario.situacao} <br>
         <br>
     </div>
 

@@ -35,7 +35,7 @@
             <input type="file" name="foto" onchange="openFile(event)" id="foto" accept="image/*" class="form-control" align="right">
 
         </div>
-            <br><br>
+        <br><br>
 
         <label> Nível de Acesso: </label> <input  readonly="true" name="acesso" type="text" class="form-control" value="${funcionario.acesso}">  <br><br>
         <label> Nome: </label> <input type="text" name="nome" class="form-control" value="${funcionario.nome}">  <br><br>
@@ -66,6 +66,9 @@
                 <option>Técnica</option>
                 <option>Diretoria Clínica</option>
                 <option>Qualidade</option>
+                <option>T.I.</option>
+                <option>Logistica</option>
+                <option>Corpo Clinico</option>
             </select>
             <br><br>
 
